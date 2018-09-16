@@ -6,3 +6,12 @@ p{
 .myColor{
     color: coral;
 }
+.MyClass{
+    text-transform: capitalize;
+    font-style: italic;
+    text-decoration: underline;
+    color: yellowgreen;
+}
+.MyClass2{
+    color: blue;
+}
