@@ -1,0 +1,32 @@
+<br>
+<!--
+  <button (click)="MyClick()">
+  Click me
+  </button>
+  <button (click)="MyClick('imzoughene')">
+  Click me
+  </button>
+-->
+<button (click)="MyClick($event,'imzoughene')">
+  Click me
+</button>
+<button (mousedown)="MyClick($event,'imzoughene')">
+  mouse down me 
+</button>
+<button (mouseup)="MyClick($event,'imzoughene')">
+  mouse up me 
+</button>
+<button (mouseover)="MyClick($event,'imzoughene')">
+  mouse over me 
+</button>
+<p (drag)="MyClick($event,'imzoughene')">
+  drag  me 
+</p>
+<button (dblclick)="MyClick($event,'imzoughene')">
+  double click me 
+</button>
+
+<p (dragover)="MyClick($event,'imzoughene')">
+  drag over me 
+</p>
+<p>use me to drag over the paragraph</p>

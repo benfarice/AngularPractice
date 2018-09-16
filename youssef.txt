@@ -1,2 +1,4 @@
 ng g component components/imzou-component
-video number 20
+ng g component components/events
+
+video number 26
