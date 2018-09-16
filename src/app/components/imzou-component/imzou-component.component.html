@@ -1,9 +1,101 @@
 <p>
   hello I'm Muslim ! works!
 </p>
+<hr>
+<div *ngIf="sultanName" style="color:green">
+  {{suname}}
+</div>
+<div *ngIf="!sultanName" style="color:red">
+  {{suname}}
+</div>
+
+<div *ngIf="sultanName;else anotherName" style="color:green">
+  {{suname}}
+</div>
+
+<ng-template #anotherName><span> Ismail aytchref</span></ng-template> 
+
+<!-- Another way-->
+<div>{{sultanName ? suname : "my name youssef"}}</div>
+<hr>
+
+<div [ngSwitch]="false">
+  <p *ngSwitchCase="true">
+    I eat eggs
+  </p>
+  <p *ngSwitchCase="false">
+    I drint tea
+  </p>
+  <p *ngSwitchDefault>
+    I eat nothing
+  </p>
+
+</div>
+
+<div [ngSwitch]="myNumber">
+  <p *ngSwitchCase="75">
+    I will eat banana
+  </p>
+  <p *ngSwitchCase="98">
+    I will eat apple
+  </p>
+  <p *ngSwitchCase="45">
+    I will eat sandwich
+  </p>
+  <p *ngSwitchDefault>
+    I eat nothing
+  </p>
+
+</div>
+
+<img src="{{myImage}}" alt="">
+<img [src]="myImage" alt="">
+<img bind-src="myImage" alt="">
+<!--<img [textContent]="myImage" alt="">-->
+
+<hr>
+<!--{changeCareer()}}
 <ol>
-  <li>{{name}}</li>
-  <li>{{firstname}}</li>
-  <li>{{age}}</li>
+  <li>{name}}</li>
+  <li>{firstname}}</li>
+  <li>{age}}</li>
+  <li>{myvar}}</li>
+  <li>{names}}</li>
+  <li>{tupel}}</li>
 
 </ol>
+<ol type="A">
+  <li>{imzoughene.age}}</li>
+  <li>{imzoughene.DreamJob}}</li>
+  <li>{imzoughene.DreamWife}}</li>
+  <li>6+7={6+7}}</li>
+</ol>
+-->
+<p>{{people}}</p>
+<p>{{person.name}}</p>
+<p class="myColor">Learn Angular</p>
+<ul>
+    <li *ngFor="let item of men">
+      {{item}}
+    </li> 
+</ul>
+
+<ul>
+  
+    <li *ngFor="let item of jobs;let i = index" class="myColor">
+     {{i+1}} : {{item}}
+    </li>
+
+</ul>
+
+<ul>
+  <li *ngFor="let item of plang">
+    {{item.languageName}}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let item of plang">
+    {{item.city}}
+  </li>
+</ul>
