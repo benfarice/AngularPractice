@@ -1,4 +1,7 @@
 ng g component components/imzou-component
 ng g component components/events
+ng g component components/cevents
+ng g component components/myforms
 
-video number 26
+
+video number 27
