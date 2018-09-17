@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ImzouComponentComponent } from './components/imzou-component/imzou-component.component';
 import { EventsComponent } from './components/events/events.component';
@@ -15,7 +15,8 @@ import { MyformsComponent } from './components/myforms/myforms.component';
     MyformsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
