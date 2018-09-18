@@ -7,6 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyformsComponent implements OnInit {
 
+
+  name:string="your first name :";
+  lname:string="your last name : ";
+  age:number=0
+
+  /*
+  name:string="";
+  myShop:string[]=["apple","orange","watermilon"];
+
+  mySubmit(){
+    this.myShop.push(this.name);
+    this.name="";
+  }
+  */
+
   constructor() { }
 
   ngOnInit() {
