@@ -7,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyformsComponent implements OnInit {
 
-
-  name:string="your first name :";
-  lname:string="your last name : ";
-  age:number=0
+  verifyForm:string="";
+  user = {
+    name:"",
+    lname:"",
+    age:0
+  }
+  mySubmit({value,valid}){
+    if(valid){
+      //this.verifyForm=value;
+      this.verifyForm=value.name;
+    }else{
+      this.verifyForm="Not valid"
+    }
+  }
+ /*  name:string="";
+  lname:string="";
+  age:number=0 */
 
   /*
   name:string="";

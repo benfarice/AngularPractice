@@ -4,21 +4,58 @@
 
     </div>
     <div class="col-md-10">
-      <form novalidate #fo (submit)="mySubmit()">
+      <form novalidate #fo="ngForm" (ngSubmit)="mySubmit(fo)">
         <div class="form-group">
-          <label for="name">Add cart</label>
-          <input type="text" class="form-control" name="name" [(ngModel)]='name' id="name" >
+          <label for="name"><!-- Add cart -->First name </label>
+          <input type="text" #myName="ngModel"
+          class="form-control" name="name" required minlength="4"
+          [(ngModel)]='user.name' id="name" >
         </div>
         <div class="form-group">
           <label for="lname">Last name</label>
-          <input type="text" class="form-control" name="lname" id="lname"  [(ngModel)]='lname'>
+          <input type="text" class="form-control"
+           name="lname" id="lname" required minlength="4"
+           #myLname="ngModel"
+            [(ngModel)]='user.lname'>
         </div>
         <div class="form-group">
             <label for="age">Age </label>
-            <input type="number" class="form-control" name="age" id="age"  [(ngModel)]='age' >
+            <input type="number" 
+            #myAge="ngModel" required minlength="2"
+            class="form-control" name="age" id="age"  
+            [(ngModel)]='user.age' >
         </div>  
      
         <button type="submit" class="btn btn-primary">Submit</button>
+        <div *ngIf="myName.errors?.required && myName.touched"
+        class="alert alert-danger">
+        First name is required
+        </div>
+
+        <div *ngIf="myName.errors?.minlength && myName.touched"
+        class="alert alert-danger">
+        First name is min required 4 chars
+        </div>
+
+        <div *ngIf="myLname.errors?.required && myLname.touched"
+        class="alert alert-danger">
+        Last name is required
+        </div>
+
+        <div *ngIf="myLname.errors?.minlength && myLname.touched"
+        class="alert alert-danger">
+        Last name is min required 4 chars
+        </div>
+
+        <div *ngIf="myAge.errors?.required && myAge.touched"
+        class="alert alert-danger">
+        Age is required
+        </div>
+
+        <div *ngIf="myAge.errors?.minlength && myAge.touched"
+        class="alert alert-danger">
+        Age is min required 2 chars
+        </div>
       </form>
     </div>
   </div>
@@ -44,6 +81,13 @@
             </li>
         </ul>
     </div> -->
-   
+    <div class="col-md-10">
+      <ul>
+        <li>{{user.name}}</li>
+        <li>{{user.lname}}</li>
+        <li>{{user.age}}</li>
+        <li>{{verifyForm}}</li>
+      </ul>
+    </div>
   </div>
 </div>
