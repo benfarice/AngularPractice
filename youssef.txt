@@ -3,6 +3,10 @@ ng g component components/events
 ng g component components/cevents
 ng g component components/myforms
 ng g component components/my-forms
+ng g component components/home
+ng g component components/profiles
+ng g component components/navbar
+
 
 ng g component components/my_component
 

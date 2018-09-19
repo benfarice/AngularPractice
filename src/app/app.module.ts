@@ -1,15 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import {DataServiceService} from './services/data-service.service';
 import {HttpModule} from '@angular/http';
+import {RouterModule,Routes} from '@angular/router';
 import { ImzouComponentComponent } from './components/imzou-component/imzou-component.component';
 import { EventsComponent } from './components/events/events.component';
 import { CeventsComponent } from './components/cevents/cevents.component';
 import { MyformsComponent } from './components/myforms/myforms.component';
 import { MyComponentComponent } from './components/my-component/my-component.component';
 import { MyFormsComponent } from './components/my-forms/my-forms.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProfilesComponent } from './components/profiles/profiles.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
+const appRoute:Routes = [
+  {path:'',component:HomeComponent},
+  {path:'profiles',component:ProfilesComponent}
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +28,16 @@ import { MyFormsComponent } from './components/my-forms/my-forms.component';
     CeventsComponent,
     MyformsComponent,
     MyComponentComponent,
-    MyFormsComponent
+    MyFormsComponent,
+    HomeComponent,
+    ProfilesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoute)
   ],
   providers: [
     DataServiceService
