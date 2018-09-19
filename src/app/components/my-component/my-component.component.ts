@@ -11,7 +11,11 @@ export class MyComponentComponent implements OnInit {
   users:string[]=[];
 
   constructor(public dataService:DataServiceService) {
-    this.users=dataService.getUsers();
+    //this.users=dataService.getUsers();
+    this.dataService.getUsers().subscribe(d=>{
+      this.users.push(d);
+      
+    });
   }
 
   ngOnInit() {
