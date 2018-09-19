@@ -12,8 +12,11 @@ export class MyComponentComponent implements OnInit {
 
   constructor(public dataService:DataServiceService) {
     //this.users=dataService.getUsers();
-    this.dataService.getUsers().subscribe(d=>{
-      this.users.push(d);
+    //this.dataService.getUsers().subscribe(d=>{
+    this.dataService.getPersons().subscribe(d=>{
+      
+     // this.users.push(d);
+     this.users = d;
       
     });
   }

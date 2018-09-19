@@ -9,6 +9,7 @@ import { EventsComponent } from './components/events/events.component';
 import { CeventsComponent } from './components/cevents/cevents.component';
 import { MyformsComponent } from './components/myforms/myforms.component';
 import { MyComponentComponent } from './components/my-component/my-component.component';
+import { MyFormsComponent } from './components/my-forms/my-forms.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { MyComponentComponent } from './components/my-component/my-component.com
     EventsComponent,
     CeventsComponent,
     MyformsComponent,
-    MyComponentComponent
+    MyComponentComponent,
+    MyFormsComponent
   ],
   imports: [
     BrowserModule,

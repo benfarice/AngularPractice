@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 import {HttpModule, Http} from '@angular/http';
-import "rxjs/add/operator/map";
+import { from } from 'rxjs';
+import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,8 +14,41 @@ export class DataServiceService {
 
   }
 
+
+  addPerson(user){
+    return this.http.post("https://jsonplaceholder.typicode.com/users",user)
+    .pipe(
+    map(
+      res => res.json()
+    )
+    )
+  }
+
   getPersons(){
-    return this.http.get("https://jsonplaceholder.typicode.com/users");
+    return this.http.get("https://jsonplaceholder.typicode.com/users")
+    .pipe(
+    map(
+      res => res.json()
+    )
+    )
+  }
+
+  deletePerson(id){
+    return this.http.delete("https://jsonplaceholder.typicode.com/users/"+id)
+    .pipe(
+    map(
+      res => res.json()
+    )
+    )
+  }
+
+  editPerson(item){
+    return this.http.put("https://jsonplaceholder.typicode.com/users/"+item.id,item)
+    .pipe(
+    map(
+      res => res.json()
+    )
+    )
   }
 
  /*  public getUsers(){

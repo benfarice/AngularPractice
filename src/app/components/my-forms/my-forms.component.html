@@ -1,0 +1,98 @@
+<div class="container">
+    <div class="container">
+        <ul  *ngFor="let item of users" class="list-group">
+          <li class="list-group-item">
+            {{item.id}}
+            <div class="float-right">
+              <button class="btn btn-danger" (click)="deleteItem(item.id)">
+                  Delete
+              </button>
+            </div>
+            <div class="float-right">
+                <button class="btn btn-success" (click)="EditItem(item)">
+                    Edit
+                </button>
+              </div>
+          </li>
+          <li class="list-group-item">
+            {{item.username}}
+          </li>
+          <li class="list-group-item">
+            {{item.name}}
+          </li>
+          <li class="list-group-item">
+              {{item.email}}
+          </li>
+          <li class="list-group-item">
+    
+            {{item.address.street}}
+         
+          </li>
+          <li class="list-group-item">
+            <br><br>
+          </li>
+        </ul>
+    
+    </div>
+  <div class="row">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10">
+      <form (submit)="mySubmit()">
+        <div class="form-group">
+          <label for="name">name </label>
+          <input type="text"
+          class="form-control" name="name" 
+          [(ngModel)]='user.name' id="name" >
+        </div>
+        <div class="form-group">
+          <label for="username">user name</label>
+          <input type="text" class="form-control"
+           name="username" id="username" 
+        
+            [(ngModel)]='user.username'>
+        </div>
+        <div class="form-group">
+            <label for="email">Email </label>
+            <input type="email" 
+            class="form-control" name="email" id="email"  
+            [(ngModel)]='user.email' >
+        </div>  
+     
+        <button type="submit" class="btn btn-primary">Submit</button>
+       
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <!--  <div class="col-md-12">
+        <h3>{{name}}</h3><br>
+    </div> -->
+    <!-- <div class="col-md-12">
+        <h3>{{lname}}</h3><br>
+    </div>
+    <br><br>
+    <div class="col-md-12">
+        <h3>{{age}}</h3>
+    </div> -->
+    <div class="col-md-1">
+
+    </div> 
+<!--     <div class="col-md-10">
+        <ul>
+      
+            <li *ngFor="let item of myShop">
+              {{item}}
+            </li>
+        </ul>
+    </div> -->
+    <div class="col-md-10">
+      <ul>
+        <li>{{user.name}}</li>
+        <li>{{user.username}}</li>
+        <li>{{user.email}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

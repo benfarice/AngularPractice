@@ -2,8 +2,10 @@ ng g component components/imzou-component
 ng g component components/events
 ng g component components/cevents
 ng g component components/myforms
+ng g component components/my-forms
+
 ng g component components/my_component
 
 ng g service services/data-service
 
-video number 27
+video number 38

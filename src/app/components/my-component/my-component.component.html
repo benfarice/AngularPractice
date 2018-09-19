@@ -2,9 +2,26 @@
   my-component works!
 </p> -->
 <div class="container">
-    <ul>
-      <li *ngFor="let item of users">
-        {{item}}
+    <ul  *ngFor="let item of users" class="list-group">
+      <li class="list-group-item">
+        {{item.id}}
+      </li>
+      <li class="list-group-item">
+        {{item.username}}
+      </li>
+      <li class="list-group-item">
+        {{item.name}}
+      </li>
+      <li class="list-group-item">
+          {{item.email}}
+      </li>
+      <li class="list-group-item">
+
+        {{item.address.street}}
+     
+      </li>
+      <li class="list-group-item">
+        <br><br>
       </li>
     </ul>
 
