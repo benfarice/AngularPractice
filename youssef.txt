@@ -6,6 +6,7 @@ ng g component components/my-forms
 ng g component components/home
 ng g component components/profiles
 ng g component components/navbar
+ng g component components/userprofile
 
 
 ng g component components/my_component

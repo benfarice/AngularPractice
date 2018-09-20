@@ -14,10 +14,12 @@ import { MyFormsComponent } from './components/my-forms/my-forms.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfilesComponent } from './components/profiles/profiles.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 const appRoute:Routes = [
   {path:'',component:HomeComponent},
-  {path:'profiles',component:ProfilesComponent}
+  {path:'profiles',component:ProfilesComponent},
+  {path:'profile/:id',component:UserprofileComponent}
 ];
 
 @NgModule({
@@ -31,7 +33,8 @@ const appRoute:Routes = [
     MyFormsComponent,
     HomeComponent,
     ProfilesComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserprofileComponent
   ],
   imports: [
     BrowserModule,
